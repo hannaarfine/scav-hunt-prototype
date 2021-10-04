@@ -10,21 +10,28 @@
   </head>
 
   <script>
-    const coin = document.querySelector("#a-image");
-    const msg = document.querySelector("#messageContainer");
+    window.setTimeout(() => {
+      const coin = document.querySelector("#a-image");
+      const canvas = document.querySelector("a-scene");
+      const messsage = document.querySelector("#messageContainer");
 
-    coin.addEventListener("click", () => {
-      msg.innerHTML = "Coin collected!";
-    });
+      canvas.addEventListener(
+        "click",
+        function () {
+          console.log("CLICK");
+          messsage.innerHTML = '<p>Clicked</p>'
+        },
+        false
+      );
+    }, 1000);
   </script>
 
   <body style="margin: 0; overflow: hidden">
-    <div id="messageContainer"></div>
+    <div id="messageContainer"><p>&nbsp;</p></div>
     <a-scene
       em
       bedded
       loading-screen="enabled: false;"
-      cursor="rayOrigin: mouse"
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
       <a-image
