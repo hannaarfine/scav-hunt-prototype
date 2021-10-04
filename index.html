@@ -15,16 +15,34 @@
       const canvas = document.querySelector("a-scene");
       const messsage = document.querySelector("#messageContainer");
 
-      canvas.addEventListener(
-        "click",
-        function () {
-          console.log("CLICK");
-          messsage.innerHTML = '<p>Clicked</p>'
-        },
-        false
-      );
+    //   canvas.addEventListener(
+    //     "click",
+    //     function () {
+    //       console.log("CLICK");
+    //       messsage.innerHTML = '<p>Clicked</p>'
+    //     },
+    //     false
+    //   );
     }, 1000);
   </script>
+
+
+<script>
+  AFRAME.registerComponent('navigate-on-click', {
+    schema: {
+      url: {default: ''}
+    },
+
+    init: function () {
+      var data = this.data;
+      var el = this.el;
+
+      el.addEventListener('click', function () {
+        window.location.href = data.url;
+      });
+    }
+  });        
+</script>
 
   <body style="margin: 0; overflow: hidden">
     <div id="messageContainer"><p>&nbsp;</p></div>
@@ -33,6 +51,7 @@
       bedded
       loading-screen="enabled: false;"
       arjs="sourceType: webcam; debugUIEnabled: false;"
+      cursor="rayOrigin: mouse"
     >
      
       <a-image
@@ -40,21 +59,16 @@
         look-at="[gps-camera]"
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+        navigate-on-click="url: http://google.com"
       ></a-image>
       <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+        navigate-on-click="url: http://google.com"
       ></a-image>
-      <a-link
-        src="assets/asset.png"
-        look-at="[gps-camera]"
-        title="Coin"
-        scale="1 1 1"
-        href="google.com"
-        gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
-      ></a-link>
+      
 
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
