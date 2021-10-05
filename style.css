@@ -1,15 +1,55 @@
 #messageContainer {
-    padding: 25px;
-    border-radius: 100px;
-    background: #fff;
-    text-align: center;
-    font-family: 'Amazon Ember', sans-serif;
-    z-index: 99;
-    width: 270px;
-    margin: auto;
+  padding: 20px;
+  border-radius: 100px;
+  background: #fff;
+  text-align: center;
+  font-family: "Amazon Ember", sans-serif;
+  z-index: 999;
+  width: 175px;
+  margin: auto;
+  margin-top: 89vh;
+  font-size: 10px;
+
+  /* Rectangle 1 */
+
+  background: #ffffff;
+  opacity: 0;
+  backdrop-filter: blur(14px);
 }
 
+.visible {
+    opacity: 1 !important;
+    animation: rise 1s ease-in-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: translateY(0px);
+  }
+}
 
 p {
-    margin: 0;
+  margin: 0;
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  position: absolute;
+  right: 15px;
+  top: 30px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.progressBar img {
+  width: 35px;
 }

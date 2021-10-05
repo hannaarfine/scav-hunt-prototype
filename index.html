@@ -12,25 +12,34 @@
   <script>
     window.setTimeout(() => {
       const message = document.querySelector("#messageContainer");
+      message.classList.add("visible");
+
+      let foundCoins = 0;
+      message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+
       const scene = document.querySelector("a-scene");
 
-      console.log(scene);
-
       scene.addEventListener("click", (e) => {
-        const icon = document
-          .querySelector("[gps-entity-place]");
-
+        const icon = document.querySelector("[gps-entity-place]");
 
         icon.setAttribute("opacity", "0");
+        foundCoins += 1;
 
-        message.innerHTML = `Clicked! At: ${icon.getAttribute("distance")}`;
+        const foundCoin = document.querySelector('#coin1');
+        foundCoin.src="assets/foundCoin.png";
+        console.log(foundCoin)
+
+        message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
       });
-
-    }, 2000);
+    }, 1500);
   </script>
 
   <body style="margin: 0; overflow: hidden">
     <div id="messageContainer"><p>&nbsp;</p></div>
+    <div class="progressBar">
+      <img src="assets/unfoundCoin.png" id="coin1" />
+      <img src="assets/unfoundCoin.png" id="coin2" />
+    </div>
     <a-scene
       embedded
       loading-screen="enabled: false;"
