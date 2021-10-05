@@ -24,8 +24,9 @@
 }
 
 .visible {
-    opacity: 1 !important;
+    opacity: .9 !important;
     animation: rise .5s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
 }
 
 
