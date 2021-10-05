@@ -20,6 +20,8 @@
       const scene = document.querySelector("a-scene");
 
       scene.addEventListener("click", (e) => {
+        message.innerHTML = `Find ${1} more coins to redeem`;
+
         const icon = document.querySelector("[gps-entity-place]");
 
         icon.setAttribute("opacity", "0");
@@ -27,9 +29,9 @@
 
         const foundCoin = document.querySelector('#coin1');
         foundCoin.src="assets/foundCoin.png";
-        console.log(foundCoin)
 
-        message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+
+        // message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
       });
     }, 1500);
   </script>
