@@ -29,7 +29,7 @@
   <script>
     window.setTimeout(() => {
       const messsage = document.querySelector("#messageContainer");
-      
+
       AFRAME.registerComponent("navigate-on-click", {
         schema: {
           url: { default: "" },
@@ -63,6 +63,7 @@
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
         navigate-on-click="url: http://google.com"
+        class="image"
       ></a-image>
       <a-image
         src="assets/asset.png"
@@ -70,8 +71,11 @@
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
         navigate-on-click="url: http://google.com"
+        class="image"
+
       ></a-image>
 
+      <a-entity raycaster="objects: .image" cursor></a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
