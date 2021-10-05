@@ -68,13 +68,21 @@
         class="image"
       ></a-image> -->
 
-      <a-link
+      <!-- <a-link
         look-at="[gps-camera]"
         title="Test link"
         distance
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
       >
-      </a-link>
+      </a-link> -->
+
+       <a-image
+        src="assets/asset.png"
+        look-at="[gps-camera]"
+        scale="1 1 1"
+        distance
+        gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+      ></a-image>
 
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
