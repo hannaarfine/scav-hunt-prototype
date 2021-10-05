@@ -13,12 +13,3 @@
 p {
     margin: 0;
 }
-
-.coin {
-    transition: opacity .5s;
-    opacity: 1;
-}
-
-.collected {
-    opacity: 0;
-}
