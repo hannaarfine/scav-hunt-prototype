@@ -11,11 +11,11 @@
 
   <script>
     window.setTimeout(() => {
-      const message = document.querySelector("#messageContainer");
+    //   const message = document.querySelector("#messageContainer");
     //   message.classList.add("visible");
 
       let foundCoins = 0;
-      message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+    //   message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
 
       const scene = document.querySelector("a-scene");
 
@@ -30,7 +30,7 @@
         foundCoin.src="assets/foundCoin.png";
 
 
-        message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;s
+        // message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
       });
     }, 1500);
   </script>
