@@ -31,13 +31,12 @@
       const message = document.querySelector("#messageContainer");
 
       const icon = document
-        .querySelector("[gps-entity-place]")
-        .getAttribute("distance");
+        .querySelector("[gps-entity-place]");
 
         icon.addEventListener("click", (e) => {
             e.stopPropagation();
             e.preventDefault();
-            
+
             message.innerHTML = 'Clicked!'
         })
 
