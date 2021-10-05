@@ -1,8 +1,8 @@
-@font-face {
+/* @font-face {
     font-family: 'Amazon Ember';
     src: url("https://m.media-amazon.com/images/G/01/ADT/Web/ADT-Campaign-NewellBTS/AmazonEmberCd_W_Rg.woff") format("woff"),
     url("https://m.media-amazon.com/images/G/01/ADT/Web/ADT-Campaign-NewellBTS/AmazonEmberCd_W_Rg.woff2") format("woff2")
-}
+} */
 
 #messageContainer {
   padding: 20px;
@@ -11,7 +11,7 @@
   text-align: center;
   font-family: "Amazon Ember", sans-serif;
   z-index: 999;
-  width: 175px;
+  width: 200px;
   margin: auto;
   background: #ffffff;
   opacity: 0;
