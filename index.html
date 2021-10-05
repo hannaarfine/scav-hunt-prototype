@@ -34,6 +34,10 @@
         .querySelector("[gps-entity-place]")
         .getAttribute("distance");
 
+        distanceMsg.addEventListener("click", () => {
+            message.innerHTML = 'Clicked!'
+        })
+
         message.innerHTML = `distance: ${distanceMsg}`
     }, 2000);
   </script>
