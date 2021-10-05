@@ -30,15 +30,18 @@
     window.setTimeout(() => {
       const message = document.querySelector("#messageContainer");
 
-      const distanceMsg = document
+      const icon = document
         .querySelector("[gps-entity-place]")
         .getAttribute("distance");
 
-        distanceMsg.addEventListener("click", () => {
+        icon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            
             message.innerHTML = 'Clicked!'
         })
 
-        message.innerHTML = `distance: ${distanceMsg}`
+        message.innerHTML = `distance: ${icon.getAttribute("distance")}`
     }, 2000);
   </script>
 
@@ -75,7 +78,6 @@
       >
       </a-link>
 
-      <a-entity raycaster="objects: .image" cursor></a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
