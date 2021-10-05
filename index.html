@@ -31,12 +31,13 @@
       const message = document.querySelector("#messageContainer");
       const scene = document.querySelector("a-scene");
 
-      const iconDistance = document.querySelector("[gps-entity-place]").getAttribute("distance");
+      
       console.log(scene);
 
       scene.addEventListener("click", (e) => {
-        console.log("click");
-        message.innerHTML = `Clicked! At ${iconDistance}`;
+          const iconDistance = document.querySelector("[gps-entity-place]").getAttribute("distance");
+       
+        message.innerHTML = `Clicked! At: ${iconDistance}`;
       });
 
       // message.innerHTML = `distance: ${icon.getAttribute("distance")}`
