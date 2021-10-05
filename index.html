@@ -30,8 +30,10 @@
     window.setTimeout(() => {
       const message = document.querySelector("#messageContainer");
 
-      const icon = document
+        const icon = document
         .querySelector("[gps-entity-place]");
+        
+        console.log(icon)
 
         icon.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -40,7 +42,7 @@
             message.innerHTML = 'Clicked!'
         })
 
-        message.innerHTML = `distance: ${icon.getAttribute("distance")}`
+        // message.innerHTML = `distance: ${icon.getAttribute("distance")}`
     }, 2000);
   </script>
 
