@@ -24,20 +24,18 @@
 
         const icon = document.querySelector("[gps-entity-place]");
 
-        // icon.setAttribute("opacity", "0");
         foundCoins += 1;
 
         const foundIcon = document.querySelector(`#coin-asset-${foundCoins}`);
         foundIcon.setAttribute("opacity", "0")
 
-
         const foundCoin = document.querySelector(`#coin${foundCoins}`);
+        foundCoin.classList.add('found')
         foundCoin.src="assets/foundCoin.png";
-
 
         message.innerHTML = foundCoins < totalCoins ? `Find ${2 - foundCoins} more coins to redeem` : `Congrats!`;
       });
-    }, 1500);
+    }, 3000);
   </script>
 
   <body style="margin: 0; overflow: hidden">

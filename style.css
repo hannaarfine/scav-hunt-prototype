@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url("https://m.media-amazon.com/images/G/01/ADT/Web/ADT-Campaign-NewellBTS/AmazonEmberCd_W_Rg.woff") format("woff"),
+    url("https://m.media-amazon.com/images/G/01/ADT/Web/ADT-Campaign-NewellBTS/AmazonEmberCd_W_Rg.woff2") format("woff2")
+}
+
 #messageContainer {
   padding: 20px;
   border-radius: 100px;
@@ -7,14 +13,10 @@
   z-index: 999;
   width: 175px;
   margin: auto;
-  /* margin-top: 75vh; */
-  font-size: 10px;
-
-  /* Rectangle 1 */
-
   background: #ffffff;
   opacity: 0;
   backdrop-filter: blur(14px);
+  font-size: 12px;
 
   position: absolute;
   bottom: 50px;
@@ -23,20 +25,9 @@
 
 .visible {
     opacity: 1 !important;
-    animation: rise 1s ease-in-out;
+    animation: rise .5s ease-in-out;
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 0.9;
-    transform: translateY(0px);
-  }
-}
 
 p {
   margin: 0;
@@ -57,3 +48,42 @@ p {
 .progressBar img {
   width: 35px;
 }
+
+.found {
+animation: found .35s ease-in-out;
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+
+   70% {
+    opacity: 0.9;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+@keyframes found {
+  0% {
+   transform: scale(1) ;
+  }
+
+  50% {
+   transform: scale(1.12);
+  }
+
+  100% {
+   transform: scale(1);
+
+  }
+}
+
