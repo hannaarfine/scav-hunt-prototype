@@ -24,8 +24,12 @@
 
         const icon = document.querySelector("[gps-entity-place]");
 
-        icon.setAttribute("opacity", "0");
+        // icon.setAttribute("opacity", "0");
         foundCoins += 1;
+
+        const foundIcon = document.querySelector(`#coin-asset-${foundCoins}`);
+        foundIcon.setAttribute("opacity", "0")
+
 
         const foundCoin = document.querySelector(`#coin${foundCoins}`);
         foundCoin.src="assets/foundCoin.png";
@@ -71,19 +75,21 @@
       >
       </a-link> -->
 
-      <!-- <a-image
+      <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="10 10 10"
         distance
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
-      ></a-image> -->
+        id="coin-asset-1"
+      ></a-image>
 
        <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="10 10 10"
         distance
+        id="coin-asset-2"
         gps-entity-place="latitude: 44.93843; longitude: -93.2817;"
       ></a-image>
 
