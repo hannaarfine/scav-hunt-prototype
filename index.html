@@ -11,11 +11,12 @@
 
   <script>
     window.setTimeout(() => {
-    //   const message = document.querySelector("#messageContainer");
-    //   message.classList.add("visible");
+      const message = document.querySelector("#messageContainer");
+      message.classList.add("visible");
 
       let foundCoins = 0;
-    //   message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+      const totalCoins = 2;
+      message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
 
       const scene = document.querySelector("a-scene");
 
@@ -26,17 +27,17 @@
         icon.setAttribute("opacity", "0");
         foundCoins += 1;
 
-        const foundCoin = document.querySelector('#coin1');
+        const foundCoin = document.querySelector(`#coin${foundCoins}`);
         foundCoin.src="assets/foundCoin.png";
 
 
-        // message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+        message.innerHTML = foundCoins < totalCoins ? `Find ${2 - foundCoins} more coins to redeem` : `Congrats!`;
       });
     }, 1500);
   </script>
 
   <body style="margin: 0; overflow: hidden">
-    <!-- <div id="messageContainer"><p>&nbsp;</p></div> -->
+    <div id="messageContainer"><p>&nbsp;</p></div>
     <div class="progressBar">
       <img src="assets/unfoundCoin.png" id="coin1" />
       <img src="assets/unfoundCoin.png" id="coin2" />
@@ -76,6 +77,14 @@
         scale="10 10 10"
         distance
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+      ></a-image>
+
+       <a-image
+        src="assets/asset.png"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        distance
+        gps-entity-place="latitude: 44.93843; longitude: -93.2815;"
       ></a-image>
 
       <a-camera gps-camera rotation-reader></a-camera>

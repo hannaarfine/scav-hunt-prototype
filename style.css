@@ -7,7 +7,7 @@
   z-index: 999;
   width: 175px;
   margin: auto;
-  margin-top: 75vh;
+  /* margin-top: 75vh; */
   font-size: 10px;
 
   /* Rectangle 1 */
@@ -15,6 +15,10 @@
   background: #ffffff;
   opacity: 0;
   backdrop-filter: blur(14px);
+
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 107.5px);
 }
 
 .visible {
