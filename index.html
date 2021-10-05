@@ -9,44 +9,22 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
 
-  <script>
+  <!-- <script>
     window.setTimeout(() => {
       const coin = document.querySelector("#a-image");
       const canvas = document.querySelector("a-scene");
       const messsage = document.querySelector("#messageContainer");
 
-      //   canvas.addEventListener(
-      //     "click",
-      //     function () {
-      //       console.log("CLICK");
-      //       messsage.innerHTML = '<p>Clicked</p>'
-      //     },
-      //     false
-      //   );
+        canvas.addEventListener(
+          "click",
+          function () {
+            console.log("CLICK");
+            messsage.innerHTML = '<p>Clicked</p>'
+          },
+          false
+        );
     }, 1000);
-  </script>
-
-  <script>
-    window.setTimeout(() => {
-      const messsage = document.querySelector("#messageContainer");
-
-      AFRAME.registerComponent("navigate-on-click", {
-        schema: {
-          url: { default: "" },
-        },
-
-        init: function () {
-          var data = this.data;
-          var el = this.el;
-
-          el.addEventListener("click", function () {
-            message.innerHTML = "Clicked on coin";
-            window.location.href = data.url;
-          });
-        },
-      });
-    }, 1000);
-  </script>
+  </script> -->
 
   <body style="margin: 0; overflow: hidden">
     <div id="messageContainer"><p>&nbsp;</p></div>
@@ -55,15 +33,14 @@
       bedded
       loading-screen="enabled: false;"
       arjs="sourceType: webcam; debugUIEnabled: false;"
-     cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
-     raycaster="objects: [gps-entity-place];"
+      cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
+      raycaster="objects: [gps-entity-place];"
     >
       <a-image
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
-        navigate-on-click="url: http://google.com"
         class="image"
       ></a-image>
       <a-image
@@ -71,10 +48,16 @@
         look-at="[gps-camera]"
         scale="1 1 1"
         gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
-        navigate-on-click="url: http://google.com"
         class="image"
-
       ></a-image>
+
+      <a-link
+        look-at="[gps-camera]"
+        href="https://google.com"
+        title="Test link"
+        gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+      >
+      </a-link>
 
       <a-entity raycaster="objects: .image" cursor></a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
