@@ -31,13 +31,15 @@
       const message = document.querySelector("#messageContainer");
       const scene = document.querySelector("a-scene");
 
-      
       console.log(scene);
 
       scene.addEventListener("click", (e) => {
-          const iconDistance = document.querySelector("[gps-entity-place]").getAttribute("distance");
-       
-        message.innerHTML = `Clicked! At: ${iconDistance}`;
+        const icon = document
+          .querySelector("[gps-entity-place]");
+
+        icon.classList.add('collected');
+
+        message.innerHTML = `Clicked! At: ${icon.getAttribute("distance")}`;
       });
 
       // message.innerHTML = `distance: ${icon.getAttribute("distance")}`
@@ -50,7 +52,6 @@
       embedded
       loading-screen="enabled: false;"
       arjs="sourceType: webcam; debugUIEnabled: false;"
-      
       vr-mode-ui="enabled: false"
     >
       <!-- <a-image
@@ -76,7 +77,8 @@
       >
       </a-link> -->
 
-       <a-image
+      <a-image
+        class="coin"
         src="assets/asset.png"
         look-at="[gps-camera]"
         scale="10 10 10"
