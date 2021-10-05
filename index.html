@@ -31,10 +31,11 @@
         const foundCoin = document.querySelector(`#coin${foundCoins}`);
         foundCoin.classList.add("found");
         foundCoin.src = "assets/foundCoin.png";
+        let remainingCoins = totalCoins - foundCoins;
 
         message.innerHTML =
           foundCoins < totalCoins
-            ? `Find ${2 - foundCoins} more coins to redeem`
+            ? `Find ${2 - foundCoins} more coin${remainingCoins > 1 ? "s" : ""} to redeem`
             : `Congrats!`;
       });
     }, 3000);
