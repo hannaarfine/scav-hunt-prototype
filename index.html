@@ -20,7 +20,6 @@
       const scene = document.querySelector("video");
 
       scene.addEventListener("click", (e) => {
-        message.innerHTML = `Find ${1} more coins to redeem`;
 
         const icon = document.querySelector("[gps-entity-place]");
 
@@ -31,7 +30,7 @@
         foundCoin.src="assets/foundCoin.png";
 
 
-        // message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;
+        message.innerHTML = `Find ${2 - foundCoins} more coins to redeem`;s
       });
     }, 1500);
   </script>
