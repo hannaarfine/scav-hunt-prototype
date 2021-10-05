@@ -19,9 +19,11 @@
       scene.addEventListener("click", (e) => {
         const icon = document
           .querySelector("[gps-entity-place]");
-        icon.setAttribute("visible", false);
 
-        // message.innerHTML = `Clicked! At: ${icon.getAttribute("distance")}`;
+
+        icon.setAttribute("opacity", "0");
+
+        message.innerHTML = `Clicked! At: ${icon.getAttribute("distance")}`;
       });
 
     }, 2000);
