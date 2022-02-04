@@ -57,6 +57,24 @@
     };
 
     loadAUI();
+
+function returnPosition(position) {
+  console.log('pos', position)
+
+  return [position.coords.latitude,  position.coords.longitude]
+}
+
+   function getLocation() {
+  if (navigator.geolocation) {
+    return navigator.geolocation.getCurrentPosition(returnPosition);
+  } 
+}
+
+  const coords = getLocation();
+  console.log('C: ', coords)
+    const coordsDiv = document.querySelector('.coords')
+
+    coordsDiv.innerHTML=`[${coords[0]}, ${coords[1]}]`;
   </script>
 
   <body style="margin: 0; overflow: hidden">
@@ -64,6 +82,11 @@
     <div class="progressBar">
       <img src="assets/unfoundCoin.png" id="coin1" />
       <img src="assets/unfoundCoin.png" id="coin2" />
+    </div>
+
+    <div class="coords"></div>
+      
+      
     </div>
     <a-scene
       embedded
@@ -99,7 +122,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         distance
-        gps-entity-place="latitude: 44.93845; longitude: -93.2811;"
+        gps-entity-place="latitude: 40.6450181; longitude: -73.7759352;"
         id="coin-asset-1"
       ></a-image>
 
